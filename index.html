@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khảo Sát Mức Độ Tự Tin Phát Biểu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Tùy chỉnh cho radio button dễ tương tác hơn */
+        .answer-label {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid #e5e7eb;
+            margin-bottom: 10px;
+        }
+        .answer-label:hover {
+            background-color: #f3f4f6;
+        }
+        /* Đánh dấu lựa chọn khi được chọn */
+        input[type="radio"]:checked + .answer-text {
+            font-weight: 600;
+            color: #1d4ed8; /* blue-700 */
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+            accent-color: #3b82f6;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen font-sans flex flex-col items-center p-4">
+
+    <div class="bg-white shadow-2xl rounded-xl max-w-3xl w-full p-8 mt-8 border-t-4 border-blue-600">
+        
+        <header class="text-center mb-8">
+            <h1 class="text-3xl font-extrabold text-gray-800 mb-2">💬 TÌM HIỂU MỨC ĐỘ TỰ TIN PHÁT BIỂU TRONG BẠN - GIẢI PHÁP HỖ TRỢ RÈN LUYỆN </h1>
+            <p class="text-gray-600 text-lg">Trả lời 9 câu hỏi dưới đây để đánh giá mức độ tự tin của bạn khi chia sẻ ý kiến trong lớp học.</p>
+        </header>
+        
+        <form id="quizForm" class="space-y-8">
+            
+            <div class="p-4 bg-blue-50 border-l-4 border-blue-500 text-blue-800 rounded-lg">
+                <p class="font-semibold">Lưu ý:</p>
+                <p>Hãy chọn đáp án gần đúng với cảm nhận của bạn nhất. Kết quả sẽ được tính điểm và đưa ra lời khuyên chi tiết.</p>
+            </div>
+
+            <div class="question p-4 bg-white rounded-lg shadow-sm">
+                <p class="text-lg font-bold mb-3 text-blue-700">1. Bạn đang học khối lớp nào?</p>
+                <label class="answer-label"><input type="radio" name="q1_grade" value="6" required><span class="answer-text">6</span></label>
+                <label class="answer-label"><input type="radio" name="q1_grade" value="7"><span class="answer-text">7</span></label>
+                <label class="answer-label"><input type="radio" name="q1_grade" value="8"><span class="answer-text">8</span></label>
+                <label class="answer-label"><input type="radio" name="q1_grade" value="9"><span class="answer-text">9</span></label>
+            </div>
+
+            <div class="question p-4 bg-white rounded-lg shadow-sm">
+                <p class="text-lg font-bold mb-3 text-blue-700">2. Bạn thường xuyên phát biểu trong giờ học chứ?</p>
+                <label class="answer-label"><input type="radio" name="q2" value="4" required><span class="answer-text">Thường xuyên</span></label>
+                <label class="answer-label"><input type="radio" name="q2" value="3"><span class="answer-text">Thỉnh thoảng</span></label>
+                <label class="answer-label"><input type="radio" name="q2" value="2"><span class="answer-text">Hầu như không bao giờ</span></label>
+            </div>
+            
+            <div class="question p-4 bg-white rounded-lg shadow-sm">
+                <p class="text-lg font-bold mb-3 text-blue-700">3. Khi giáo viên đặt câu hỏi trong lớp, bạn thường cảm thấy thế nào?</p>
+                <label class="answer-label"><input type="radio" name="q3" value="4" required><span class="answer-text">Rất tự tin và sẵn sàng giơ tay phát biểu</span></label>
+                <label class="answer-label"><input type="radio" name="q3" value="3"><span class="answer-text">Có hơi ngại nhưng vẫn cố gắng phát biểu</span></label>
+                <label class="answer-label"><input type="radio" name="q3" value="2"><span class="answer-text">Ngại và thường im lặng</span></label>
+                <label class="answer-label"><input type="radio" name="q3" value="1"><span class="answer-text">Cảm thấy rất sợ khi bị gọi phát biểu</span></label>
+            </div>
+
+            <div class="question p-4 bg-white rounded-lg shadow-sm">
+                <p class="text-lg font-bold mb-3 text-blue-700">4. Khi phát biểu ý kiến, bạn có sợ sai hoặc bị bạn cười không?</p>
+                <label class="answer-label"><input type="radio" name="q4" value="4" required><span class="answer-text">Không bao giờ</span></label>
+                <label class="answer-label"><input type="radio" name="q4" value="3"><span class="answer-text">Thỉnh thoảng</span></label>
+                <label class="answer-label"><input type="radio" name="q4" value="2"><span class="answer-text">Thường xuyên</span></label>
+            </div>
+
+            <div class="question p-4 bg-white rounded-lg shadow-sm">
+                <p class="text-lg font-bold mb-3 text-blue-700">5. Điều gì khiến bạn ngại phát biểu nhất? (Chọn một lý do quan trọng nhất)</p>
+                <label class="answer-label"><input type="radio" name="q5" value="2" required><span class="answer-text">Sợ nói sai và bị chê cười</span></label>
+                <label class="answer-label"><input type="radio" name="q5" value="2"><span class="answer-text">Không biết cách diễn đạt ý rõ ràng</span></label>
+                <label class="answer-label"><input type="radio" name="q5" value="1"><span class="answer-text">Thiếu hiểu biết về bài học</span></label>
+                <label class="answer-label"><input type="radio" name="q5" value="2"><span class="answer-text">Không quen nói trước đám đông</span></label>
+                <label class="answer-label"><input type="radio" name="q5" value="1"><span class="answer-text">Không hứng thú với bài học</span></label>
+            </div>
+
+            <div class="question p-4 bg-white rounded-lg shadow-sm">
+                <p class="text-lg font-bold mb-3 text-blue-700">6. Khi bạn phát biểu xong, bạn thường cảm thấy:</p>
+                <label class="answer-label"><input type="radio" name="q6" value="3" required><span class="answer-text">Rất vui và hãnh diện</span></label>
+                <label class="answer-label"><input type="radio" name="q6" value="2"><span class="answer-text">Lo lắng không biết có nói đúng không</span></label>
+                <label class="answer-label"><input type="radio" name="q6" value="1"><span class="answer-text">Xấu hổ và muốn né tránh lần sau</span></label>
+            </div>
+
+            <div class="question p-4 bg-white rounded-lg shadow-sm">
+                <p class="text-lg font-bold mb-3 text-blue-700">7. Bạn có nghĩ rằng môi trường lớp học ảnh hưởng đến sự tự tin của bạn không?</p>
+                <label class="answer-label"><input type="radio" name="q7" value="4" required><span class="answer-text">Có, rất nhiều</span></label>
+                <label class="answer-label"><input type="radio" name="q7" value="3"><span class="answer-text">Có một chút</span></label>
+                <label class="answer-label"><input type="radio" name="q7" value="2"><span class="answer-text">Hoàn toàn không</span></label>
+            </div>
+
+            <div class="question p-4 bg-white rounded-lg shadow-sm">
+                <p class="text-lg font-bold mb-3 text-blue-700">8. Theo bạn, điều gì sẽ giúp bạn tự tin phát biểu hơn? (Chọn yếu tố quan trọng nhất)</p>
+                <label class="answer-label"><input type="radio" name="q8" value="4" required><span class="answer-text">Giáo viên động viên, khen ngợi khi phát biểu</span></label>
+                <label class="answer-label"><input type="radio" name="q8" value="4"><span class="answer-text">Tham gia các hoạt động rèn kỹ năng nói</span></label>
+                <label class="answer-label"><input type="radio" name="q8" value="3"><span class="answer-text">Luyện tập nói trước gương hoặc bạn bè</span></label>
+                <label class="answer-label"><input type="radio" name="q8" value="4"><span class="answer-text">Có nhóm bạn cùng hỗ trợ, cùng luyện tập</span></label>
+            </div>
+
+            <div class="question p-4 bg-white rounded-lg shadow-sm">
+                <p class="text-lg font-bold mb-3 text-blue-700">9. Nếu có một chương trình hoặc câu lạc bộ “Tự tin nói trước lớp”, bạn có muốn tham gia không?</p>
+                <label class="answer-label"><input type="radio" name="q9" value="4" required><span class="answer-text">Có, chắc chắn tham gia</span></label>
+                <label class="answer-label"><input type="radio" name="q9" value="3"><span class="answer-text">Có thể, nếu thời gian phù hợp</span></label>
+                <label class="answer-label"><input type="radio" name="q9" value="1"><span class="answer-text">Không quan tâm</span></label>
+            </div>
+
+            <button type="button" onclick="calculateScore()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 w-full">
+                NHẬN KẾT QUẢ VÀ LỜI KHUYÊN
+            </button>
+        </form>
+
+        <div id="result" class="mt-10 hidden p-6 rounded-xl border-t-8">
+            </div>
+
+        <footer class="mt-8 text-center text-gray-500 text-sm border-t pt-4">
+            <p>Cảm ơn bạn đã tham gia! Câu trả lời của bạn sẽ giúp nhóm nghiên cứu đưa ra những giải pháp thiết thực giúp học sinh THCS tự tin hơn khi phát biểu trong lớp học.</p>
+        </footer>
+    </div>
+
+    <script>
+        function calculateScore() {
+            const form = document.getElementById('quizForm');
+            const questions = ['q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9']; // 8 câu hỏi tính điểm
+            const totalQuestions = 9; // Tổng số câu hỏi, bao gồm cả câu về Khối lớp
+            let totalScore = 0;
+            let answeredCount = 0;
+            let resultDiv = document.getElementById('result');
+            let message = "";
+            let imageTag = "";
+            let advice = "";
+            let resultClass = "";
+
+            // 1. Kiểm tra và tính toán điểm cho 8 câu hỏi có điểm (Q2-Q9)
+            for (const qName of questions) {
+                const selected = document.querySelector('input[name="' + qName + '"]:checked');
+                if (selected) {
+                    totalScore += parseInt(selected.value);
+                    answeredCount++;
+                }
+            }
+
+            // Kiểm tra tổng số câu trả lời (cả Q1 - khối lớp)
+            const q1Answered = document.querySelector('input[name="q1_grade"]:checked');
+            if (answeredCount < questions.length || !q1Answered) {
+                alert("⚠️ Vui lòng trả lời hết tất cả các câu hỏi để có kết quả chính xác nhất!");
+                return;
+            }
+
+            // 2. Phân loại và tạo nội dung chi tiết theo 3 mức độ của bạn
+            
+            if (totalScore >= 22) {
+                // Mức 1: Tự tin cao (22 – 28 điểm, điều chỉnh lên Max 29)
+                imageTag = '<img src="https://via.placeholder.com/300x150/10b981/ffffff?text=TỰ+TIN+CAO+🌟" class="mx-auto my-4 rounded-lg shadow-md">';
+                message = `
+                    <h2 class="text-3xl font-bold text-green-600 mb-4">🌟 Bạn đang ở Mức 1: Mức tự tin cao (${totalScore} điểm)</h2>
+                    <h3 class="text-xl font-semibold text-green-700 mt-6 mb-2">Đặc điểm:</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>Bạn rất sẵn sàng chia sẻ ý kiến trước lớp.</li>
+                        <li>Có khả năng kiểm soát cảm xúc và thể hiện rõ ràng suy nghĩ.</li>
+                        <li>Tự tin của bạn ảnh hưởng tích cực đến bạn bè xung quanh.</li>
+                    </ul>
+                `;
+                advice = `
+                    <h3 class="text-xl font-semibold text-green-700 mt-6 mb-2">💡 Giải pháp phát triển chính mình:</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-600">
+                        <li>Tiếp tục phát huy bằng cách tham gia làm nhóm trưởng, MC, hoặc đại diện lớp trong các hoạt động.</li>
+                        <li>Chia sẻ kinh nghiệm của bạn với những bạn còn ngại phát biểu và giúp đỡ họ tự tin hơn.</li>
+                        <li>Tham gia các cuộc thi hùng biện, kể chuyện, thuyết trình để học hỏi và rèn kỹ năng nâng cao.</li>
+                    </ul>
+                `;
+                resultClass = "border-green-600 bg-green-50";
+
+            } else if (totalScore >= 15) {
+                // Mức 2: Tự tin trung bình (15 – 21 điểm)
+                imageTag = '<img src="https://via.placeholder.com/300x150/3b82f6/ffffff?text=TỰ+TIN+TRUNG+BÌNH+🌤️" class="mx-auto my-4 rounded-lg shadow-md">';
+                message = `
+                    <h2 class="text-3xl font-bold text-blue-600 mb-4">🌤️Bạn đang ở mức 2: Mức tự tin trung bình (${totalScore} điểm)</h2>
+                    <h3 class="text-xl font-semibold text-blue-700 mt-6 mb-2">Đặc điểm:</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>Bạn đôi khi phát biểu, nhưng còn phụ thuộc vào tâm lý hoặc môi trường.</li>
+                        <li>Có tiềm năng tự tin, chỉ cần được khích lệ và rèn luyện thêm.</li>
+                    </ul>
+                `;
+                advice = `
+                    <h3 class="text-xl font-semibold text-blue-700 mt-6 mb-2">💡 Giải pháp cải thiện bản thân:</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-600">
+                        <li>Luyện nói trước gương hoặc nhóm bạn thân mỗi ngày.</li>
+                        <li>Khi học, chuẩn bị trước ý muốn nói để giảm lo lắng khi phát biểu.</li>
+                        <li>Tham gia các buổi sinh hoạt hoặc câu lạc bộ kỹ năng nói để quen dần việc chia sẻ ý kiến.</li>
+                        <li>Ghi nhận sự tiến bộ của bản thân sau mỗi lần phát biểu,dù nhỏ nhưngbằng cách tự khen hoặc đánh dấu lại trong nhật ký tự tin bạn sẽ tìm thấy chính bản thân mình.</li>
+                    </ul>
+                `;
+                resultClass = "border-blue-600 bg-blue-50";
+
+            } else {
+                // Mức 3: Tự tin thấp (dưới 15 điểm)
+                imageTag = '<img src="https://via.placeholder.com/300x150/ef4444/ffffff?text=TỰ+TIN+THẤP+🌧️" class="mx-auto my-4 rounded-lg shadow-md">';
+                message = `
+                    <h2 class="text-3xl font-bold text-red-600 mb-4">🌧️ Bạn đang ở mức 3: Mức tự tin thấp (${totalScore} điểm)</h2>
+                    <h3 class="text-xl font-semibold text-red-700 mt-6 mb-2">Đặc điểm:</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>Bạn rất ngại hoặc sợ phát biểu.</li>
+                        <li>Có thể do sợ sai, sợ bị cười, hoặc thiếu tự tin về khả năng nói trước lớp, trường,... </li>
+                        <li>Đây là một biểu hiện tiêu cực, tự cách ly bản thân bạn với mọi người xung quanh, nhưng điều đó cũng hoàn toàn bình thường. Vì vậy hãy cố lên bạn nhé!!!</li>
+                    </ul>
+                `;
+                advice = `
+                    <h3 class="text-xl font-semibold text-red-700 mt-6 mb-2">💡 Giải pháp Rèn luyện cơ bản giúp bạn khắc phục:</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-600">
+                        <li>Hãy bắt đầu từ những bước nhỏ: phát biểu trong nhóm nhỏ, hỏi ý kiến giáo viên riêng.</li>
+                        <li>Thực hành kỹ năng nói qua hoạt động nhẹ nhàng: đọc thơ, kể chuyện, ghi âm giọng nói để quen với việc nói ra.</li>
+                        <li>Quay video ngắn hoặc ghi âm phần phát biểu của mình, sau đó tự xem lại để nhận ra điểm mạnh và tiến bộ qua từng lần.</li>
+                        <li>Tạo “góc nói tự tin” trong lớp hoặc ở nhà - một không gian nhỏ nơi bạn có thể tập nói, luyện giọng, và chia sẻ ý kiến thoải mái không sợ bị cười.</li>
+                    </ul>
+                `;
+                resultClass = "border-red-600 bg-red-50";
+            }
+
+            // 3. Hiển thị kết quả
+            resultDiv.innerHTML = imageTag + message + advice;
+            resultDiv.className = `mt-10 p-6 rounded-xl border-t-8 ${resultClass}`;
+            resultDiv.classList.remove('hidden');
+            resultDiv.scrollIntoView({ behavior: "smooth" });
+        }
+    </script>
+</body>
+</html>
